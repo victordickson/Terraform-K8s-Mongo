@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasky
+spec:
+  selector:
+    matchLabels:
+      name: tasky
+  template:
+    metadata:
+      labels:
+        name: tasky
+    spec:
+      containers:
+      - name: app
+        image: vickcode/tasky-image:v1
+        ports:
+          - containerPort: 8080
+        env:
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret1
+              key: MONGODB_URI
+        - name: SECRET_KEY
+          valueFrom: 
+            secretKeyRef:
+              name: mongodb-secret2
+              key: SECRET_KEY
