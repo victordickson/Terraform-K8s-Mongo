@@ -4,7 +4,7 @@ variable "cluster_name" {
 }
 
 variable "ami_id" {
-  description = "AMI ID for MongoDB-compatible instance"
+  description = "AMI ID for MongoDB-compatible instance"  # Check https://bitnami.com/stack/mongodb/cloud/aws/amis
   default     = "ami-0800c9c8a2a3dfbe8"
 }
 

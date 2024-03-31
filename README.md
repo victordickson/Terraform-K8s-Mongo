@@ -1,5 +1,7 @@
 # k8s-terraform
 
+![Terraform-K8s-Mongo](Terraform-K8s-Mongo.png)
+## Steps
 * Change to the terraform directory, `cd terraform`
 
 * Initialize terraform on the directory to download required providers
@@ -69,8 +71,9 @@ kubectl apply -f manifests/deployment.yaml
 
 `kubectl port-forward <pod> 8080:8080`
 
-
 * Deploy the service loadbalancer on the cluster `kubectl apply -f manifest/loadbalancer.yaml`
+
+![tasky](tasky.png)
 
 # mongo-to-s3
 
@@ -131,6 +134,10 @@ To view the logs, navigate to the `mongo-to-s3-logs` directory:
 ```shell
 cd ~/mongo-to-s3-logs
 ```
+
+## Clean Up Resources
+
+`terraform destroy -var-file=example.tfvars --auto-approve`
 
 
 
